@@ -21,7 +21,7 @@ Installation
 == 
 
 This software can be treated as both a WP plugin and a theme include.
-However, only when activated as a plugin will updates be available/
+However, only when activated as a plugin will updates be available.
 
 # Plugin
 
@@ -32,8 +32,7 @@ However, only when activated as a plugin will updates be available/
 
 1. Copy the 'acf-repeater' folder into your theme folder (can use sub folders)
    * You can place the folder anywhere inside the 'wp-content' directory
-2. Edit your functions.php file and add the following code to include the field:
-
+2. Edit your functions.php file and add the following code to include the field:  
 `
 include_once('acf-repeater/acf-repeater.php');
 `
