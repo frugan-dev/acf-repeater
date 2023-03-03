@@ -746,7 +746,7 @@ class acf_field_repeater extends acf_field {
 	*  @return	(boolean)
 	*/
 	
-	function update_row( $row, $i = 0, $field, $post_id ) {
+	function update_row( $row, int $i, array $field, $post_id ) {
 		
 		// bail early if no layout reference
 		if( !is_array($row) ) return false;
@@ -812,7 +812,7 @@ class acf_field_repeater extends acf_field {
 	*  @return	(boolean)
 	*/
 	
-	function delete_row( $i = 0, $field, $post_id ) {
+	function delete_row( int $i, array $field, $post_id ) {
 		
 		// bail early if no sub fields
 		if( empty($field['sub_fields']) ) return false;
