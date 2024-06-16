@@ -1,5 +1,5 @@
 {
-    "name": "frugan-it/acf-repeater",
+    "name": "frugan-dev/acf-repeater",
     "description": "Advanced Custom Fields: Repeater Field",
     "type": "wordpress-plugin",
     "require": {}
