@@ -1,6 +1,7 @@
 {
     "name": "frugan-dev/acf-repeater",
     "description": "Advanced Custom Fields: Repeater Field",
+    "license": "GPL-2.0-or-later",
     "type": "wordpress-plugin",
     "require": {}
 }
