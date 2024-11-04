@@ -40,7 +40,7 @@ class acf_field_repeater extends acf_field {
 		
 		
 		// filters
-		$this->add_filter('acf/validate_field',					array($this, 'validate_any_field'));
+		$this->add_filter('acf/validate_field',array($this, 'validate_any_field'));
 		
 	}
 	
@@ -406,7 +406,7 @@ class acf_field_repeater extends acf_field {
 			<td class="acf-input">
 				<?php 
 				
-				acf_get_view('field-group-fields', $args);
+				acf_get_view( 'acf-field-group/fields', $args );
 				
 				?>
 			</td>
@@ -736,7 +736,7 @@ class acf_field_repeater extends acf_field {
 	*  @return	(boolean)
 	*/
 	
-	function update_row( $row, $i = 0, $field, $post_id ) {
+	function update_row( $row, $field, $post_id, $i = 0 ) {
 		
 		// bail early if no layout reference
 		if( !is_array($row) ) return false;
@@ -802,7 +802,7 @@ class acf_field_repeater extends acf_field {
 	*  @return	(boolean)
 	*/
 	
-	function delete_row( $i = 0, $field, $post_id ) {
+	function delete_row( $field, $post_id, $i = 0 ) {
 		
 		// bail early if no sub fields
 		if( empty($field['sub_fields']) ) return false;
@@ -872,7 +872,7 @@ class acf_field_repeater extends acf_field {
 				
 				
 				// update row
-				$this->update_row( $row, $i, $field, $post_id );
+				$this->update_row( $row, $field, $post_id, $i );
 				
 				
 				// append
@@ -889,7 +889,7 @@ class acf_field_repeater extends acf_field {
 			// loop
 			for( $i = $new_value; $i < $old_value; $i++ ) {
 				
-				$this->delete_row( $i, $field, $post_id );
+				$this->delete_row( $field, $post_id, $i );
 				
 			}
 			
@@ -931,7 +931,7 @@ class acf_field_repeater extends acf_field {
 		// loop
 		for( $i = 0; $i < $old_value; $i++ ) {
 			
-			$this->delete_row( $i, $field, $post_id );
+			$this->delete_row( $field, $post_id, $i );
 			
 		}
 			
